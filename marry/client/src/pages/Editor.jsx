@@ -3,6 +3,7 @@ import { toPng } from "html-to-image";
 import BiodataForm from "../components/form/BiodataForm";
 import TemplateRenderer from "../templates/TemplateRenderer";
 import { translations } from "../utils/lang";
+import { API_URLS } from "../utils/config.js";
 
 export default function Editor() {
     const [template, setTemplate] = useState("bloom");
@@ -85,7 +86,7 @@ export default function Editor() {
                 pixelRatio: 2, // retina-quality
             });
 
-            const res = await fetch("http://localhost:5001/api/generate-pdf", {
+            const res = await fetch(API_URLS.generatePDF, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

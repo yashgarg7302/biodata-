@@ -8,6 +8,7 @@ import VedikaTemplate from './vedika/VedikaTemplate';
 import UtsavTemplate from './utsav/UtsavTemplate';
 import ShagunTemplate from './shagun/ShagunTemplate';
 import AanganTemplate from './aangan/AanganTemplate';
+import MangalTemplate from './mangal/MangalTemplate';
 
 export default function TemplateRenderer({ data, template, theme, font, lang = 'en', invocation = '' }) {
     const props = { data, theme, font, lang, invocation };
@@ -31,6 +32,8 @@ export default function TemplateRenderer({ data, template, theme, font, lang = '
             return <ShagunTemplate {...props} />;
         case "aangan":
             return <AanganTemplate {...props} />;
+        case "mangal":
+            return <MangalTemplate {...props} />;
         default:
             return (
                 <div className="flex flex-col items-center justify-center h-full text-slate-400">

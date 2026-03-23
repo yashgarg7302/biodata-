@@ -23,9 +23,9 @@ export default function UtsavTemplate({ data, theme, font, lang = 'en', invocati
             }}
         >
             {/* Header section with standout highlight */}
-            <div className="z-10 mb-8 flex flex-col items-center">
+            <div className="z-10 mb-12 flex flex-col items-center">
                 <div
-                    className="w-full py-4 px-6 rounded-2xl shadow-xl flex flex-col items-center justify-center mb-8 relative"
+                    className="w-full py-5 px-6 rounded-2xl shadow-xl flex flex-col items-center justify-center mb-10 relative"
                     style={{ background: `linear-gradient(to bottom right, ${primary}, ${primary}ee)`, color: '#fff' }}
                 >
                     <p className="text-[10px] font-black tracking-widest uppercase mb-2 opacity-80 min-h-[1em]">{invocation}</p>
@@ -35,7 +35,7 @@ export default function UtsavTemplate({ data, theme, font, lang = 'en', invocati
                 </div>
 
                 {photo ? (
-                    <div className="relative shrink-0 border-4 border-white shadow-2xl rounded-2xl overflow-hidden -mt-16 z-20" style={{ width: photoSize * 1.5, height: photoSize * 1.5 }}>
+                    <div className="relative shrink-0 border-4 border-white shadow-2xl rounded-2xl overflow-hidden -mt-12 z-20" style={{ width: photoSize * 1.5, height: photoSize * 1.5 }}>
                         <img src={photo} alt="" className="w-full h-full object-cover" />
                     </div>
                 ) : (

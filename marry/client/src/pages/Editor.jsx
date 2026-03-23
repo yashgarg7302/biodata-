@@ -80,10 +80,18 @@ export default function Editor() {
 
         setIsDownloading(true);
         try {
+            // Give a tiny moment for all SVG/images to settle
+            await new Promise(resolve => setTimeout(resolve, 500));
+
             // 🔥 FILE SIZE OPTIMIZATION: JPEG + Lower pixelRatio = Smallest PDF
             const dataUrl = await toJpeg(previewRef.current, {
-                quality: 0.7, // Balances text clarity and compression
-                pixelRatio: 1.5, // 1.5x is the sweet spot for A4 clarity vs size
+                quality: 0.8, // Slightly higher for clarity
+                pixelRatio: 2, // 2x gives professional print quality
+                cacheBust: true,
+                style: {
+                    transform: 'scale(1)',
+                    transformOrigin: 'top left'
+                }
             });
 
             const pdf = new jsPDF({

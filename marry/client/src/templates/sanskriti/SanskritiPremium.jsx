@@ -1,6 +1,7 @@
 import React from 'react';
 import { fontMap } from "../../utils/fontMap";
 import { translations } from "../../utils/lang";
+import floralImg from "../../assets/images/floral.png";
 
 export default function SanskritiPremium({ data, font, theme, lang = 'en', invocation = '' }) {
   const { name, fields = [], photo } = data;
@@ -33,16 +34,16 @@ export default function SanskritiPremium({ data, font, theme, lang = 'en', invoc
     >
       {/* Floral corners */}
       <div className="absolute top-2 left-2 w-10 h-10 md:w-14 md:h-14 pointer-events-none opacity-80 z-0">
-        <img src="/src/assets/images/floral.png" alt="" className="w-full h-full object-contain mix-blend-multiply" />
+        <img src={floralImg} alt="" crossOrigin="anonymous" className="w-full h-full object-contain mix-blend-multiply" />
       </div>
       <div className="absolute top-2 right-2 w-10 h-10 md:w-14 md:h-14 pointer-events-none opacity-80 rotate-90 z-0">
-        <img src="/src/assets/images/floral.png" alt="" className="w-full h-full object-contain mix-blend-multiply" />
+        <img src={floralImg} alt="" crossOrigin="anonymous" className="w-full h-full object-contain mix-blend-multiply" />
       </div>
       <div className="absolute bottom-2 left-2 w-10 h-10 md:w-14 md:h-14 pointer-events-none opacity-80 -rotate-90 z-0">
-        <img src="/src/assets/images/floral.png" alt="" className="w-full h-full object-contain mix-blend-multiply" />
+        <img src={floralImg} alt="" crossOrigin="anonymous" className="w-full h-full object-contain mix-blend-multiply" />
       </div>
       <div className="absolute bottom-2 right-2 w-10 h-10 md:w-14 md:h-14 pointer-events-none opacity-80 rotate-180 z-0">
-        <img src="/src/assets/images/floral.png" alt="" className="w-full h-full object-contain mix-blend-multiply" />
+        <img src={floralImg} alt="" crossOrigin="anonymous" className="w-full h-full object-contain mix-blend-multiply" />
       </div>
 
       {/* Header */}

@@ -38,14 +38,14 @@ export default function AanganTemplate({ data, theme, font, lang = 'en', invocat
                 </div>
                 <h1
                     className="font-black tracking-tight leading-none text-slate-800 drop-shadow-sm mb-2"
-                    style={{ fontSize: nameSize * 1.1 }}
+                    style={{ fontSize: nameSize * 1.1, fontFamily: 'inherit' }}
                 >
                     {name || t.labels.name}
                 </h1>
                 <p className="font-bold opacity-30 uppercase tracking-[0.3em] text-[9px]">{t.title}</p>
             </div>
 
-            <div className="flex-1 w-full max-w-lg mx-auto z-10 space-y-2 overflow-hidden">
+            <div className="flex-1 z-10 w-full overflow-y-auto custom-scrollbar pr-1 space-y-2">
                 {fields.map((field) => (
                     <div
                         key={field.id}

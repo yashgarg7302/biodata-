@@ -46,18 +46,18 @@ export default function ModernTemplate({ data, theme, font, lang = 'en', invocat
                     </p>
                     <h1
                         className="font-black tracking-tight leading-none mb-1"
-                        style={{ color: '#0f172a', fontSize: nameSize }}
+                        style={{ color: '#0f172a', fontSize: nameSize, fontFamily: 'inherit' }}
                     >
                         {name || t.labels.name}
                     </h1>
-                    <p className="font-bold opacity-30 uppercase tracking-[0.3em] text-[9px]">
+                    <p className="font-bold opacity-30 uppercase tracking-[0.3em] text-[9px]" style={{ fontFamily: 'inherit' }}>
                         {t.title}
                     </p>
                 </div>
             </div>
 
             {/* Grid layout with accent bars */}
-            <div className="flex-1 z-10 w-full overflow-hidden">
+            <div className="flex-1 z-10 w-full">
                 <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                     {fields.map((field) => (
                         <div key={field.id} className="group transition-all">

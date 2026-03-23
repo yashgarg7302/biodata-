@@ -46,9 +46,9 @@ export default function RoyalTemplate({ data, theme, font, lang = 'en', invocati
                 <div className="text-center">
                     <h1
                         className="font-bold uppercase tracking-tight drop-shadow-sm mb-1"
-                        style={{ color: primary, fontSize: nameSize }}
+                        style={{ color: primary, fontSize: nameSize, fontFamily: 'inherit' }}
                     >
-                        {name || "Your Name"}
+                        {name || t.labels.name}
                     </h1>
                     <div className="h-1 w-24 mx-auto opacity-40 rounded-full" style={{ background: primary }} />
                 </div>

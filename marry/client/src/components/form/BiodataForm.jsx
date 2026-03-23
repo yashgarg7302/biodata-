@@ -75,32 +75,37 @@ export default function BiodataForm({ name, setName, photo, setPhoto, fields, se
             <div className="w-full h-px bg-slate-200 mb-2"></div>
 
             {fields.map((field) => (
-                <div key={field.id} className="flex gap-2 sm:gap-3 items-center group bg-white p-1 rounded-xl transition-all">
-                    {/* Label Input */}
-                    <input
-                        type="text"
-                        value={field.label}
-                        onChange={(e) => updateField(field.id, 'label', e.target.value)}
-                        className="w-[35%] px-3 py-2.5 rounded-lg border border-transparent hover:border-slate-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-200 bg-slate-50/50 text-slate-600 focus:text-slate-800 text-sm font-semibold transition-all shadow-none"
-                    />
-                    {/* Value Input */}
-                    <input
-                        type="text"
-                        placeholder={field.label}
-                        value={field.value}
-                        onChange={(e) => updateField(field.id, 'value', e.target.value)}
-                        className="flex-1 px-4 py-2.5 rounded-lg border border-slate-200 hover:border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 bg-white text-slate-800 text-sm shadow-sm transition-all"
-                    />
-                    {/* Delete Button */}
-                    <button
-                        type="button"
-                        onClick={() => removeField(field.id)}
-                        className="p-2.5 text-slate-400 hover:text-red-500 rounded-lg sm:opacity-0 group-hover:opacity-100"
-                    >
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                    </button>
+                <div key={field.id} className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center group bg-white p-2 rounded-xl border border-slate-100/50 shadow-sm transition-all">
+                    <div className="flex w-full sm:w-[35%] gap-2 items-center">
+                        {/* Label Input */}
+                        <input
+                            type="text"
+                            value={field.label}
+                            onChange={(e) => updateField(field.id, 'label', e.target.value)}
+                            className="w-full px-3 py-2 rounded-lg border border-transparent hover:border-slate-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-200 bg-slate-50/50 text-slate-600 focus:text-slate-800 text-xs font-bold transition-all shadow-none"
+                        />
+                    </div>
+                    
+                    <div className="flex w-full flex-1 gap-2 items-center">
+                        {/* Value Input */}
+                        <input
+                            type="text"
+                            placeholder={field.label}
+                            value={field.value}
+                            onChange={(e) => updateField(field.id, 'value', e.target.value)}
+                            className="flex-1 px-4 py-2.5 rounded-lg border border-slate-200 hover:border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 bg-white text-slate-800 text-sm shadow-sm transition-all"
+                        />
+                        {/* Delete Button (visible on mobile, hidden on desktop until hover) */}
+                        <button
+                            type="button"
+                            onClick={() => removeField(field.id)}
+                            className="p-2.5 text-slate-400 hover:text-red-500 rounded-lg sm:opacity-0 group-hover:opacity-100 transition-all shrink-0"
+                        >
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             ))}
 

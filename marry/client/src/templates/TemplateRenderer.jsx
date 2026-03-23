@@ -9,6 +9,7 @@ import UtsavTemplate from './utsav/UtsavTemplate';
 import ShagunTemplate from './shagun/ShagunTemplate';
 import AanganTemplate from './aangan/AanganTemplate';
 import MangalTemplate from './mangal/MangalTemplate';
+import SanskritiPremium from './sanskriti/SanskritiPremium';
 
 export default function TemplateRenderer({ data, template, theme, font, lang = 'en', invocation = '' }) {
     const props = { data, theme, font, lang, invocation };
@@ -34,6 +35,8 @@ export default function TemplateRenderer({ data, template, theme, font, lang = '
             return <AanganTemplate {...props} />;
         case "mangal":
             return <MangalTemplate {...props} />;
+        case "sanskriti-premium":
+            return <SanskritiPremium {...props} />;
         default:
             return (
                 <div className="flex flex-col items-center justify-center h-full text-slate-400">

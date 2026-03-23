@@ -25,10 +25,10 @@ export default function VedikaTemplate({ data, theme, font, lang = 'en', invocat
             <div className="absolute top-0 right-0 w-2 h-full" style={{ backgroundColor: primary, opacity: 0.2 }} />
 
             <div className="z-10 mb-6 border-b-2 tracking-tighter" style={{ borderColor: primary }}>
-                <p className="text-[10px] uppercase font-black tracking-widest opacity-40 ml-1 min-h-[1em]" style={{ color: primary }}>{invocation}</p>
+                <p className="text-[10px] uppercase font-black tracking-widest opacity-40 ml-1 min-h-[1em]" style={{ color: primary, fontFamily: 'inherit' }}>{invocation}</p>
                 <div className="flex justify-between items-end pb-2">
-                    <h1 className="font-serif font-black uppercase text-3xl" style={{ color: primary }}>{t.title}</h1>
-                    <span className="font-bold uppercase tracking-widest text-[9px] opacity-40" style={{ color: primary }}>ESTD 2026</span>
+                    <h1 className="font-black uppercase text-3xl" style={{ color: primary, fontFamily: 'inherit' }}>{t.title}</h1>
+                    <span className="font-bold uppercase tracking-widest text-[9px] opacity-40" style={{ color: primary, fontFamily: 'inherit' }}>ESTD 2026</span>
                 </div>
             </div>
 
@@ -42,8 +42,8 @@ export default function VedikaTemplate({ data, theme, font, lang = 'en', invocat
                 )}
 
                 <div className="flex-1 flex flex-col justify-center">
-                    <p className="font-bold opacity-40 uppercase tracking-[0.3em] text-[9px] mb-2">{t.labels.name}</p>
-                    <h2 className="font-serif font-black tracking-tighter border-b pb-2 mb-4" style={{ color: primary, fontSize: nameSize * 1.1 }}>
+                    <p className="font-bold opacity-40 uppercase tracking-[0.3em] text-[9px] mb-2" style={{ fontFamily: 'inherit' }}>{t.labels.name}</p>
+                    <h2 className="font-black tracking-tighter border-b pb-2 mb-4" style={{ color: primary, fontSize: nameSize * 1.1, fontFamily: 'inherit' }}>
                         {name || t.labels.name}
                     </h2>
                     <div className="flex gap-4">

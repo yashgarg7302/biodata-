@@ -24,8 +24,8 @@ export default function SanskritiTemplate({ data, theme, font, lang = 'en', invo
         >
             {/* Traditional Header */}
             <div className="text-center z-10 mb-4">
-                <p className="text-[10px] font-bold opacity-50 mb-1 min-h-[1em]" style={{ color: primary }}>{invocation}</p>
-                <h1 className="font-serif font-black uppercase tracking-tighter border-b-2 inline-block px-8 pb-1" style={{ color: primary, borderColor: primary, fontSize: nameSize * 0.8 }}>
+                <p className="text-[10px] font-bold opacity-50 mb-1 min-h-[1em]" style={{ color: primary, fontFamily: 'inherit' }}>{invocation}</p>
+                <h1 className="font-black uppercase tracking-tighter border-b-2 inline-block px-8 pb-1" style={{ color: primary, borderColor: primary, fontSize: nameSize * 0.8, fontFamily: 'inherit' }}>
                     {t.title}
                 </h1>
             </div>
@@ -36,7 +36,7 @@ export default function SanskritiTemplate({ data, theme, font, lang = 'en', invo
                         <img src={photo} alt="" className="w-full h-full object-cover" />
                     </div>
                 )}
-                <h2 className="font-serif font-bold tracking-wide" style={{ color: '#432616', fontSize: nameSize }}>
+                <h2 className="font-bold tracking-wide" style={{ color: '#432616', fontSize: nameSize, fontFamily: 'inherit' }}>
                     {name || t.labels.name}
                 </h2>
             </div>

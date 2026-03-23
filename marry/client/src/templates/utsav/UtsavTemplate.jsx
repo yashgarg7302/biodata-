@@ -29,7 +29,7 @@ export default function UtsavTemplate({ data, theme, font, lang = 'en', invocati
                     style={{ background: `linear-gradient(to bottom right, ${primary}, ${primary}ee)`, color: '#fff' }}
                 >
                     <p className="text-[10px] font-black tracking-widest uppercase mb-2 opacity-80 min-h-[1em]">{invocation}</p>
-                    <h1 className="font-serif font-black uppercase text-center tracking-tight leading-tight" style={{ fontSize: nameSize * 1.25 }}>
+                    <h1 className="font-black uppercase text-center tracking-tight leading-tight" style={{ fontSize: nameSize * 1.25, fontFamily: 'inherit' }}>
                         {name || t.labels.name}
                     </h1>
                 </div>

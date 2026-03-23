@@ -110,14 +110,14 @@ export default function Editor() {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row gap-8 w-full animate-fade-in-up">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 w-full animate-fade-in-up">
             {/* LEFT - FORM */}
-            <div className="w-full lg:w-[45%] flex flex-col">
-                <div className="glass-panel p-4 md:p-6 shadow-md border-t-4 border-t-primary-500 rounded-2xl flex-1 lg:sticky lg:top-24 lg:max-h-[85vh] overflow-y-auto">
+            <div className="w-full md:w-[45%] flex flex-col shrink-0">
+                <div className="glass-panel p-4 md:p-6 shadow-md border-t-4 border-t-primary-500 rounded-2xl md:flex-1 md:sticky md:top-24 md:max-h-[88vh] md:overflow-y-auto custom-scrollbar">
                     {/* Language Selector */}
                     <div className="mb-6">
                         <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">Language</h3>
-                        <div className="flex gap-2 flex-wrap">
+                        <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 snap-x snap-mandatory no-scrollbar">
                             {[
                                 { id: 'en', label: 'English' },
                                 { id: 'hi', label: 'Hindi' },
@@ -133,7 +133,7 @@ export default function Editor() {
                                 <button
                                     key={l.id}
                                     onClick={() => setLang(l.id)}
-                                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border cursor-pointer ${lang === l.id ? 'bg-primary-500 text-white border-primary-500 shadow-sm' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                                    className={`px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-bold transition-all border cursor-pointer shrink-0 snap-start ${lang === l.id ? 'bg-primary-500 text-white border-primary-500 shadow-sm' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                                 >
                                     {l.label}
                                 </button>
@@ -154,21 +154,16 @@ export default function Editor() {
                     </div>
 
                     {/* Template Selector */}
-                    <div className="mb-8">
-                        <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">Templates</h3>
-                        <div className="flex gap-2 flex-wrap">
+                    <div className="mb-6">
+                        <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Templates</h3>
+                        <div className="flex gap-2 overflow-x-auto pb-4 -mx-1 px-1 snap-x snap-mandatory no-scrollbar">
                             {[
                                 { id: 'bloom', label: 'Bloom', primary: "#4a6c8c", bg: "#f0f9ff", highlight: 'bg-sky-50 border-sky-300 text-sky-700' },
-                                { id: 'classic', label: 'Classic', primary: "#d63384", bg: "#fdf2f8", highlight: 'bg-pink-50 border-pink-300 text-pink-700' },
                                 { id: 'royal', label: 'Royal', primary: "#b45309", bg: "#fffbeb", highlight: 'bg-amber-50 border-amber-300 text-amber-900' },
-                                { id: 'modern', label: 'Modern', primary: "#059669", bg: "#f8fafc", highlight: 'bg-emerald-50 border-emerald-300 text-emerald-900' },
                                 { id: 'sanskriti', label: 'Sanskriti', primary: "#8b4513", bg: "#fff8f0", highlight: 'bg-orange-50 border-orange-200 text-orange-900' },
-                                { id: 'vedika', label: 'Vedika', primary: "#334155", bg: "#ffffff", highlight: 'bg-slate-50 border-slate-200 text-slate-800' },
-                                { id: 'utsav', label: 'Utsav', primary: "#ff7043", bg: "#ffffff", highlight: 'bg-orange-50 border-orange-300 text-orange-600' },
-                                { id: 'shagun', label: 'Shagun', primary: "#ef4444", bg: "#fef6e4", highlight: 'bg-red-50 border-red-200 text-red-700' },
+                                { id: 'sanskriti-premium', label: 'Sanskriti Premium', primary: "#b45309", bg: "#f6efe4", highlight: 'bg-amber-50 border-amber-500 text-amber-900' },
+                                { id: 'modern', label: 'Modern', primary: "#059669", bg: "#f8fafc", highlight: 'bg-emerald-50 border-emerald-300 text-emerald-900' },
                                 { id: 'aangan', label: 'Aangan', primary: "#4a6c8c", bg: "#f9f9f9", highlight: 'bg-slate-50 border-slate-200 text-slate-600', isFree: true },
-                                { id: 'vedika', label: 'Nikah', primary: "#047857", bg: "#f0fdf4", highlight: 'bg-emerald-50 border-emerald-300 text-emerald-900' },
-                                { id: 'shagun', label: 'Vivah', primary: "#991b1b", bg: "#fff1f2", highlight: 'bg-red-50 border-red-300 text-red-900' },
                                 { id: 'mangal', label: 'Mangal', primary: "#854d0e", bg: "#fefce8", highlight: 'bg-amber-50 border-amber-300 text-amber-900' }
                             ].map((btn) => {
                                 const isSelected = template === btn.id && theme.primary.toLowerCase() === btn.primary.toLowerCase();
@@ -179,10 +174,10 @@ export default function Editor() {
                                             setTemplate(btn.id);
                                             setTheme({ primary: btn.primary, background: btn.bg });
                                         }}
-                                        className={`flex-1 min-w-[30%] py-1.5 px-3 rounded-lg text-[11px] font-bold transition-all border cursor-pointer relative ${isSelected ? btn.highlight + ' shadow-sm' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                                        className={`min-w-[100px] py-1.5 px-3 rounded-lg text-[10px] md:text-[11px] font-bold transition-all border cursor-pointer relative shrink-0 snap-start ${isSelected ? btn.highlight + ' shadow-sm' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                                     >
                                         {btn.label}
-                                        {btn.isFree && <span className="absolute -top-1 -right-1 px-1 bg-green-500 text-white text-[8px] rounded-full">FREE</span>}
+                                        {btn.isFree && <span className="absolute -top-1 -right-1 px-1 bg-green-500 text-white text-[8px] rounded-full uppercase">FREE</span>}
                                     </button>
                                 );
                             })}
@@ -200,7 +195,7 @@ export default function Editor() {
             </div>
 
             {/* RIGHT - PREVIEW */}
-            <div className="w-full lg:w-[55%] flex flex-col gap-4">
+            <div className="w-full md:w-[55%] flex flex-col gap-4">
                 {/* Theme Selector UI */}
                 <div className="glass-panel p-4 shadow-sm border border-slate-200 rounded-xl flex items-center gap-4 bg-white/60">
                     <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider ml-2">Themes</h3>
@@ -247,7 +242,7 @@ export default function Editor() {
                     </div>
                 </div>
 
-                <div className="glass-panel p-2 shadow-lg bg-slate-100/50 rounded-2xl flex-1 border border-slate-200 min-h-[600px] flex flex-col relative">
+                <div className="glass-panel p-2 shadow-lg bg-slate-100/50 rounded-2xl md:flex-1 border border-slate-200 min-h-[500px] md:min-h-[600px] flex flex-col relative">
                     <div className="absolute top-4 right-4 z-10 flex items-center gap-2 md:gap-3">
                         <span className="px-3 py-1 bg-white/80 shadow text-[10px] md:text-xs font-semibold text-slate-500 rounded-full border border-slate-200">
                             Professional Canvas
@@ -271,7 +266,7 @@ export default function Editor() {
                         </button>
                     </div>
 
-                    <div className="w-full mt-16 p-2 flex-1 h-0 overflow-y-auto">
+                    <div className="w-full mt-16 p-2 md:flex-1 md:h-0 md:overflow-y-auto custom-scrollbar">
                         <div
                             ref={previewRef}
                             className="w-full bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden mx-auto"

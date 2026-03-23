@@ -49,7 +49,7 @@ export default function MangalTemplate({ data, theme, font, lang = 'en', invocat
                     <div className="flex-[2] flex flex-col justify-center h-full py-4">
                         <h1
                             className="font-black text-left leading-none mb-4 uppercase tracking-tighter"
-                            style={{ fontSize: nameSize * 1.3, color: primary }}
+                            style={{ fontSize: nameSize * 1.3, color: primary, fontFamily: 'inherit' }}
                         >
                             {name || t.labels.name}
                         </h1>

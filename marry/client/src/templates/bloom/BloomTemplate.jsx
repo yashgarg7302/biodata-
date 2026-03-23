@@ -52,16 +52,16 @@ export default function BloomTemplate({ data, theme, font, lang = 'en', invocati
 
                 <h1
                     className="font-black tracking-tighter leading-none mb-1 drop-shadow-sm italic"
-                    style={{ color: dynamicPrimary, fontSize: nameSize }}
+                    style={{ color: dynamicPrimary, fontSize: nameSize, fontFamily: 'inherit' }}
                 >
                     {name || t.labels.name}
                 </h1>
                 <div className="h-0.5 w-16 bg-gradient-to-r from-transparent via-pink-300 to-transparent mx-auto opacity-50" />
-                <p className="uppercase tracking-[0.4em] text-[10px] font-bold mt-2 opacity-30 italic">{t.title}</p>
+                <p className="uppercase tracking-[0.4em] text-[10px] font-bold mt-2 opacity-30 italic" style={{ fontFamily: 'inherit' }}>{t.title}</p>
             </div>
 
             {/* Content Grid */}
-            <div className="flex-1 z-10 relative px-6 w-full max-w-2xl mx-auto overflow-hidden">
+            <div className="flex-1 z-10 relative px-6 w-full max-w-2xl mx-auto">
                 <div className="grid grid-cols-2 gap-x-12 gap-y-4">
                     {fields.map((field) => (
                         <div key={field.id} className="flex flex-col border-b border-pink-50 pb-1.5 transition-all hover:translate-x-1">

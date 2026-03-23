@@ -34,8 +34,8 @@ export default function ShagunTemplate({ data, theme, font, lang = 'en', invocat
                     <p className="text-[10px] uppercase font-black tracking-[0.2em] mb-3 opacity-60 italic min-h-[1em]" style={{ color: primary }}>{invocation}</p>
                     <div className="w-16 h-0.5 mx-auto bg-slate-200 mb-4" />
                     <h1
-                        className="font-serif font-black tracking-tighter leading-none mb-1 text-slate-800 drop-shadow-sm"
-                        style={{ fontSize: nameSize * 1.2 }}
+                        className="font-black tracking-tighter leading-none mb-1 text-slate-800 drop-shadow-sm"
+                        style={{ fontSize: nameSize * 1.2, fontFamily: 'inherit' }}
                     >
                         {name || t.labels.name}
                     </h1>

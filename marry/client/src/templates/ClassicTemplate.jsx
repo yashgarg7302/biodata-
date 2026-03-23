@@ -54,8 +54,8 @@ export default function ClassicTemplate({ data, theme, font, lang = 'en', invoca
             {/* Header */}
             <div className="text-center border-b border-slate-100 transition-colors duration-500" style={{ marginBottom: gap, paddingBottom: gap * 0.6 }}>
                 <h1
-                    className="font-serif font-bold tracking-wide uppercase drop-shadow-sm transition-colors duration-500"
-                    style={{ color: dynamicPrimary, fontSize: nameSize }}
+                    className="font-bold tracking-wide uppercase drop-shadow-sm transition-colors duration-500"
+                    style={{ color: dynamicPrimary, fontSize: nameSize, fontFamily: 'inherit' }}
                 >
                     {name || t.labels.name}
                 </h1>
